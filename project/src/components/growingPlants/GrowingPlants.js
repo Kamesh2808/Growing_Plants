@@ -21,6 +21,8 @@ function GrowingPlants(props) {
   };
   const { plantData = defaultdata } = props;
 
+  const { name, size, icon, aboutMe } = plantData;
+
   // const plantData={
   //   name: "Rose",
   //   size: 30,
@@ -29,13 +31,23 @@ function GrowingPlants(props) {
 
   return (
     <div className="plant">
-      <div> I'm {plantData.name}</div>
-      <div>
-        I'm growing
-        <span style={{ fontSize: `${plantData.size}px` }}>
-          {plantData.icon}
-        </span>
+      <div> I'm {name}, I'm growing {"         "}
+
+        {/* conditional rendering */}
+        {name === "Rose" ? (
+          <span>⭐</span>
+        ) : (
+          <span> 🌼</span>
+        )}
+        {/* end */}
       </div>
+
+      <div>
+        <span style={{ fontSize: `${size}px` }}>{icon}</span>
+      </div>
+
+      {aboutMe.map((data, index) => (<div>{index + 1}. {data}</div>))}
+      <br></br>
     </div>
   );
 }
