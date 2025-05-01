@@ -1,6 +1,8 @@
 import React from "react";
 import GrowingPlants from "../growingPlants/GrowingPlants";
 import "../growingPlants/GrowingPlants.css";
+import "./Home.css"; // Add this import
+
 function Home() {
   const plantData = {
     name: "Rose",
@@ -39,11 +41,13 @@ function Home() {
   };
 
   return (
-    <div>
-      <h1>Welcome Home</h1>
-      <GrowingPlants plantData={plantData} />
-      <GrowingPlants plantData={plantData2} />
-      <GrowingPlants plantData={plantData3} />
+    <div className="home-container">
+      <h1 className="welcome-title">Welcome Home</h1>
+      <div className="plants-grid">
+        <GrowingPlants plantData={plantData} />
+        <GrowingPlants plantData={plantData2} />
+        <GrowingPlants plantData={plantData3} />
+      </div>
     </div>
   );
 }
