@@ -2,10 +2,7 @@ import {  useEffect } from "react";
 import React, { useState } from "react";
 
 
-const Test = () =>
-{
-  return <h5>test</h5>
-}
+
 
 function GrowingPlants(props) {
 
@@ -60,7 +57,7 @@ function GrowingPlants(props) {
       alert("I am too big now, I need to be trimmed");
       setdynamicSize(30); //resetting the size to 30
     }
-  }
+  } 
 
   useEffect(() => {//which run after every render
     console.log("code");
@@ -79,7 +76,7 @@ function GrowingPlants(props) {
     <div className="plant">
       <div>
         {" "}
-       <Test/>
+       
         I'm {name}, I'm growing {"         "}
         {/* conditional rendering */}
         {name === "Rose" ? <span>⭐</span> : <span> 🌼</span>}
